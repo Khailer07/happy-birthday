@@ -1,0 +1,835 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+:root {
+    --pink: #ff6b9d;
+    --light-pink: #ffb6cd;
+    --dark: #180b16;
+    --purple: #241127;
+    --white: #fff8fc;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    background:
+        radial-gradient(
+            circle at 50% 0%,
+            #4b183b,
+            transparent 35%
+        ),
+        linear-gradient(
+            180deg,
+            #120810,
+            #1b0d1d,
+            #0d070d
+        );
+
+    color: var(--white);
+
+    font-family:
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+/* ========================= */
+/* PARTICLES */
+/* ========================= */
+
+.particles {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    z-index: 0;
+}
+
+
+.particles::before,
+.particles::after {
+    content: "";
+
+    position: absolute;
+
+    width: 4px;
+    height: 4px;
+
+    background: white;
+
+    border-radius: 50%;
+
+    box-shadow:
+        10vw 15vh white,
+        25vw 70vh #ff9fc0,
+        40vw 30vh white,
+        60vw 80vh #ffc2d7,
+        75vw 20vh white,
+        90vw 65vh #ff8eb5,
+        50vw 50vh white,
+        15vw 90vh #ffc2d7;
+
+    animation:
+        sparkle 4s infinite alternate;
+}
+
+
+@keyframes sparkle {
+
+    from {
+        opacity: .2;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* ========================= */
+/* OPENING */
+/* ========================= */
+
+.opening {
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding: 30px;
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.opening-content {
+    max-width: 800px;
+
+    animation:
+        fadeUp 1.5s ease;
+}
+
+
+.small-text {
+    color: var(--light-pink);
+
+    letter-spacing: 4px;
+
+    text-transform: uppercase;
+
+    font-size: .75rem;
+
+    margin-bottom: 30px;
+}
+
+
+.opening h1 {
+    font-size:
+        clamp(
+            3rem,
+            10vw,
+            7rem
+        );
+
+    line-height: .95;
+
+    font-weight: 700;
+}
+
+
+.opening h1 span {
+    color: var(--pink);
+
+    text-shadow:
+        0 0 30px #ff6b9d66;
+}
+
+
+.opening-subtitle {
+    max-width: 550px;
+
+    margin:
+        30px auto;
+
+    color: #d8bdce;
+
+    line-height: 1.8;
+}
+
+
+.main-btn,
+.gift-btn {
+    border: none;
+
+    padding:
+        16px 28px;
+
+    border-radius: 50px;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b9d,
+            #d83f77
+        );
+
+    font-weight: 700;
+
+    font-size: 1rem;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 35px #ff6b9d40;
+
+    transition:
+        .3s;
+}
+
+
+.main-btn:hover,
+.gift-btn:hover {
+    transform:
+        translateY(-5px)
+        scale(1.03);
+
+    box-shadow:
+        0 15px 45px #ff6b9d70;
+}
+
+
+/* ========================= */
+/* MAIN */
+/* ========================= */
+
+main {
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ========================= */
+/* MUSIC */
+/* ========================= */
+
+.music-btn {
+    position: fixed;
+
+    right: 20px;
+
+    top: 20px;
+
+    z-index: 100;
+
+    width: 48px;
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid #ffffff30;
+
+    background:
+        #ffffff15;
+
+    color: white;
+
+    backdrop-filter:
+        blur(10px);
+
+    cursor: pointer;
+
+    font-size: 1.2rem;
+}
+
+
+/* ========================= */
+/* HERO */
+/* ========================= */
+
+.hero {
+    min-height: 80vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding:
+        80px 25px;
+}
+
+
+.eyebrow {
+    color: var(--pink);
+
+    font-size: .75rem;
+
+    letter-spacing: 4px;
+
+    font-weight: 700;
+
+    margin-bottom: 20px;
+}
+
+
+.hero h2 {
+    font-size:
+        clamp(
+            2.5rem,
+            8vw,
+            5rem
+        );
+}
+
+
+.hero h1 {
+    color: var(--pink);
+
+    font-size:
+        clamp(
+            4rem,
+            14vw,
+            9rem
+        );
+
+    line-height: .9;
+
+    text-shadow:
+        0 0 50px #ff6b9d45;
+}
+
+
+.hero p:last-child {
+    margin-top: 30px;
+
+    max-width: 550px;
+
+    color: #d8bdce;
+
+    line-height: 1.8;
+}
+
+
+/* ========================= */
+/* PHOTO */
+/* ========================= */
+
+.photo-section {
+    text-align: center;
+
+    padding:
+        80px 20px;
+}
+
+
+.photo-frame {
+    width:
+        min(420px, 90vw);
+
+    margin: auto;
+
+    padding: 10px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff9fbe,
+            #713653,
+            #ff6b9d
+        );
+
+    box-shadow:
+        0 30px 80px #00000070;
+}
+
+
+.photo-frame img {
+    width: 100%;
+
+    display: block;
+
+    border-radius: 22px;
+
+    aspect-ratio: 4 / 5;
+
+    object-fit: cover;
+}
+
+
+.photo-caption {
+    margin-top: 25px;
+
+    color: #d8bdce;
+
+    font-style: italic;
+}
+
+
+/* ========================= */
+/* MESSAGE */
+/* ========================= */
+
+.message {
+    max-width: 850px;
+
+    margin: auto;
+
+    padding:
+        100px 25px;
+
+    text-align: center;
+}
+
+
+.message h2 {
+    font-size:
+        clamp(
+            2rem,
+            6vw,
+            4rem
+        );
+
+    line-height: 1.15;
+
+    margin-bottom: 45px;
+}
+
+
+.message-text {
+    color: #d8bdce;
+
+    font-size: 1.05rem;
+
+    line-height: 2;
+}
+
+
+.message-text p {
+    margin:
+        25px 0;
+}
+
+
+/* ========================= */
+/* REASONS */
+/* ========================= */
+
+.reasons {
+    max-width: 1000px;
+
+    margin: auto;
+
+    padding:
+        100px 25px;
+
+    text-align: center;
+}
+
+
+.reasons h2 {
+    font-size:
+        clamp(
+            2rem,
+            6vw,
+            4rem
+        );
+
+    margin-bottom: 50px;
+}
+
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+}
+
+
+.reason-card {
+    padding: 35px 25px;
+
+    border-radius: 25px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffffff0c,
+            #ffffff04
+        );
+
+    border:
+        1px solid #ffffff12;
+
+    transition:
+        .3s;
+}
+
+
+.reason-card:hover {
+    transform:
+        translateY(-8px);
+
+    border-color:
+        #ff6b9d55;
+}
+
+
+.reason-card span {
+    font-size: 2.5rem;
+}
+
+
+.reason-card h3 {
+    margin:
+        20px 0 12px;
+}
+
+
+.reason-card p {
+    color: #cbb6c5;
+
+    line-height: 1.7;
+}
+
+
+/* ========================= */
+/* QUOTE */
+/* ========================= */
+
+.quote-section {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    padding:
+        80px 25px;
+}
+
+
+.quote-mark {
+    font-size: 7rem;
+
+    color: var(--pink);
+
+    height: 80px;
+}
+
+
+.quote-section p {
+    max-width: 750px;
+
+    font-size:
+        clamp(
+            1.5rem,
+            4vw,
+            2.5rem
+        );
+
+    line-height: 1.5;
+
+    font-style: italic;
+}
+
+
+.quote-section span {
+    margin-top: 30px;
+
+    color: #d8bdce;
+}
+
+
+/* ========================= */
+/* GIFT INTRO */
+/* ========================= */
+
+.gift-intro {
+    min-height: 70vh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    padding: 50px 25px;
+}
+
+
+.gift-intro h2 {
+    font-size:
+        clamp(
+            2.5rem,
+            7vw,
+            5rem
+        );
+
+    margin-bottom: 20px;
+}
+
+
+.gift-intro p:not(.eyebrow) {
+    color: #cbb6c5;
+
+    margin-bottom: 30px;
+}
+
+
+/* ========================= */
+/* GIFT */
+/* ========================= */
+
+.gift {
+    position: relative;
+
+    min-height: 100vh;
+
+    padding:
+        100px 20px;
+
+    text-align: center;
+
+    overflow: hidden;
+}
+
+
+.gift-glow {
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    background:
+        #ff4f8130;
+
+    border-radius: 50%;
+
+    filter: blur(100px);
+
+    left: 50%;
+
+    top: 30%;
+
+    transform:
+        translate(-50%, -50%);
+
+    pointer-events: none;
+}
+
+
+.gift h2 {
+    position: relative;
+
+    font-size:
+        clamp(
+            3rem,
+            8vw,
+            6rem
+        );
+
+    margin-bottom: 10px;
+}
+
+
+.gift-message {
+    position: relative;
+
+    color: #d8bdce;
+
+    margin-bottom: 40px;
+}
+
+
+.gift-photo {
+    position: relative;
+
+    width:
+        min(600px, 90vw);
+
+    margin:
+        40px auto;
+
+    padding: 12px;
+
+    border-radius: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ff6b9d,
+            #ffbad0,
+            #7c3158
+        );
+
+    box-shadow:
+        0 30px 100px #ff6b9d35;
+}
+
+
+.gift-photo img {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 20px;
+
+    object-fit: contain;
+
+    max-height: 650px;
+
+    background: #120810;
+}
+
+
+.gift h3 {
+    position: relative;
+
+    font-size: 2rem;
+
+    margin-top: 40px;
+}
+
+
+.final-message {
+    position: relative;
+
+    max-width: 650px;
+
+    margin:
+        25px auto;
+
+    color: #cbb6c5;
+
+    line-height: 1.9;
+}
+
+
+.final-love {
+    position: relative;
+
+    color: var(--pink);
+
+    font-size: 1.2rem;
+
+    font-weight: 700;
+}
+
+
+/* ========================= */
+/* FOOTER */
+/* ========================= */
+
+footer {
+    text-align: center;
+
+    padding:
+        80px 20px;
+
+    color: #9d8293;
+}
+
+
+footer span {
+    color: var(--pink);
+}
+
+
+/* ========================= */
+/* ANIMATION */
+/* ========================= */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0);
+    }
+}
+
+
+/* ========================= */
+/* MOBILE */
+/* ========================= */
+
+@media (max-width: 700px) {
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+
+    .music-btn {
+        right: 15px;
+
+        top: 15px;
+    }
+
+
+    .hero {
+        min-height: 75vh;
+    }
+
+
+    .gift-photo img {
+        max-height: 500px;
+    }
+
+}
